@@ -1,6 +1,6 @@
 ---
 - name: postgresql demo
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     db_name: testdb
