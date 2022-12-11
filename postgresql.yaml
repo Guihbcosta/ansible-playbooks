@@ -5,13 +5,16 @@
   vars:
     db_name: "testdb"
   tasks:
-    - name: "Utility present"
-      ansible.builtin.package:
-        name: python3-psycopg2
-        state: present
-    - name: "Create db"
-      community.postgresql.postgresql_db:
-        state: present
-        name: "{{ db_name }}"
-      become: true
-      become_user: postgres
+#    - name: "Utility present"
+#      ansible.builtin.package:
+#        name: python3-psycopg2
+#        state: present
+#    - name: "Create db"
+#      community.postgresql.postgresql_db:
+#        state: present
+#        name: "{{ db_name }}"
+#      become: true
+#      become_user: postgres
+  - name: "just execute a ls -lrt command"
+    shell: "ls -lrt"
+    register: "output"
