@@ -1,15 +1,15 @@
 ---
-- name: postgresql demo
+- name: "postgresql demo"
   hosts: localhost
   become: true
   vars:
-    db_name: testdb
+    db_name: "testdb"
   tasks:
-    - name: Utility present
+    - name: "Utility present"
       ansible.builtin.package:
         name: python3-psycopg2
         state: present
-    - name: Create db
+    - name: "Create db"
       community.postgresql.postgresql_db:
         state: present
         name: "{{ db_name }}"
