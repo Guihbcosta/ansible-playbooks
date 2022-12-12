@@ -4,9 +4,7 @@ WORKDIR /docker-esquema
 
 COPY . /docker-esquema
 
-COPY requirement.txt /docker-esquema
-
-RUN pip install -r requirement.txt --no-cache-dir
+RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
 EXPOSE 80
 
