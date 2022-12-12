@@ -4,7 +4,7 @@ WORKDIR /docker-esquema
 
 COPY . /docker-esquema
 
-COPY requirements.txt /docker-esquema
+COPY requirement.txt /docker-esquema
 
 RUN pip install -r requirements.txt --no-cache-dir
 
