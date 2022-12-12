@@ -1,6 +1,6 @@
 ---
 - name: postgresql demo
-  hosts: all
+  hosts: localhost
   become: true
   vars:
     postgresql_version: "14"
