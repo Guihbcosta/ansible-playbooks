@@ -1,10 +1,10 @@
-FROM python:2.7-slim
+FROM python:3.11.0a6-alpine3.15
 
-WORKDIR /app
+WORKDIR /docker-esquema
 
-COPY . /app
+COPY . /docker-esquema
 
-RUN pip install --trusted-host pypi.python.org -r requirements.txt
+RUN pip install -r requirements.txt --no-cache-dir
 
 EXPOSE 80
 
