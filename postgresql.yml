@@ -18,7 +18,7 @@
         state: present
 
     - name: Check if PostgreSQL is initialized
-      ansible.builtin.stat:
+      stat:
         path: "{{ postgresql_data_dir }}/pg_hba.conf"
       register: postgres_data
 
