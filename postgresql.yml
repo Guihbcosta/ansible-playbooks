@@ -9,7 +9,7 @@
     ansible_ssh_pipelining: true
   tasks:
     - name: Install packages
-      ansible.builtin.apt:
+      apt:
         name:
           - postgresql
           - postgresql-contrib
@@ -23,19 +23,19 @@
       register: postgres_data
 
     - name: Empty data dir
-      ansible.builtin.file:
+      file:
         path: "{{ postgresql_data_dir }}"
         state: absent
       when: not postgres_data.stat.exists
 
     - name: Initialize PostgreSQL
-      ansible.builtin.shell: "{{ postgresql_bin_path }}/initdb -D {{ postgresql_data_dir }}"
+      shell: "{{ postgresql_bin_path }}/initdb -D {{ postgresql_data_dir }}"
       become: true
       become_user: postgres
       when: not postgres_data.stat.exists
 
     - name: Start and enable service
-      ansible.builtin.service:
+      service:
         name: postgresql
         state: started
         enabled: true
