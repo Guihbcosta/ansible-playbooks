@@ -16,7 +16,7 @@
       copy:
         src: "{{ app_root }}"
         dest: "{{ document_root }}"
-        mode: preserve
+        mode: '644'
 
     - name: Apply Nginx template
       template:
