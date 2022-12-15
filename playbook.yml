@@ -3,8 +3,8 @@
   become: yes
   vars:
     server_name: "{{ ansible_default_ipv4.address }}"
-    document_root: /var/www
-    app_root: html_demo_site-main
+    document_root: "/var/www"
+    app_root: "html_demo_site-main"
   tasks:
     - name: Update apt cache and install Nginx
       apt:
